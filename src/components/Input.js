@@ -12,8 +12,18 @@ export default class Input extends React.Component<{}> {
   render() {
     return (
       <View>
-        <Text style={{color: '#ffff00', fontSize: 30}}>Dummy Text</Text>
+        {/* <Text style={{color: '#ffff00', fontSize: 30}}>Dummy Text</Text> */}
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#006064',
+    color: '#ffffff',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
