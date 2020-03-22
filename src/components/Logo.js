@@ -17,7 +17,7 @@ export default class Logo extends React.Component<{}> {
           style={{width: 70, height: 70}}
           source={require('../assets/images/logo.png')}
         />
-        <Text style={styles.logoText}> Anything you want to write...</Text>
+        <Text style={styles.logoText}>Welcome username...</Text>
       </View>
     );
   }
@@ -25,13 +25,13 @@ export default class Logo extends React.Component<{}> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
+    flexGrow: 1,
+    justifyContent: 'flex-end',
     alignItems: 'center',
   },
   logoText: {
-      color: '#ffffff',
-      fontSize: 18,
-      marginVertical: 15,
-  }
+    color: '#ffffff',
+    fontSize: 18,
+    marginVertical: 15,
+  },
 });

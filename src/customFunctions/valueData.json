@@ -1,0 +1,30 @@
+{
+  "2": {
+    "primaryFactor": "0.15",
+    "factor1": "0.47",
+    "factor2": "0.47",
+    "factor3": "0.29",
+    "factor4": "0.47"
+  },
+  "3": {
+    "primaryFactor": "0.22",
+    "factor1": "0.71",
+    "factor2": "0.71",
+    "factor3": "0.43",
+    "factor4": "0.71"
+  },
+  "5": {
+    "primaryFactor": "0.37",
+    "factor1": "1.18",
+    "factor2": "1.18",
+    "factor3": "0.73",
+    "factor4": "1.18"
+  },
+  "7": {
+    "primaryFactor": "0.51",
+    "factor1": "1.65",
+    "factor2": "1.65",
+    "factor3": "1.02",
+    "factor4": "1.65"
+  }
+}

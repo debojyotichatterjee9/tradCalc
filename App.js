@@ -23,16 +23,14 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import Input from './src/components/Input';
-import Logo from './src/components/Logo';
+import InputScreen from './src/components/InputScreen';
 export default class App extends React.Component<{}> {
   render() {
     return (
       <>
         <View style={styles.container}>
           <StatusBar backgroundColor="#00363a" barStyle="light-content" />
-          <Logo/>
-          <Input />
+          <InputScreen />
         </View>
       </>
     );
