@@ -23,14 +23,14 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
+import Input from './src/components/Input';
 export default class App extends React.Component<{}> {
   render() {
     return (
       <>
         <View style={styles.container}>
           <StatusBar backgroundColor="#00363a" barStyle="light-content" />
-          <Text style={{color: '#ffffff', fontSize: 30}}>Dummy Text</Text>
+          <Input />
         </View>
       </>
     );
