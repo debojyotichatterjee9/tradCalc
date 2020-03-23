@@ -13,7 +13,7 @@ import Form from '../components/Form';
 export default class InputScreen extends React.Component<{}> {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Logo />
         <Form />
         <View style={styles.bottomInfoTextContainer}>

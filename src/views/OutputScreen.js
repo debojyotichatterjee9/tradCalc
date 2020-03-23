@@ -12,7 +12,7 @@ export default class OutputScreen extends React.Component<{}> {
   render() {
     return (
       <View>
-        
+        <Text>Output Screen</Text>
       </View>
     );
   }

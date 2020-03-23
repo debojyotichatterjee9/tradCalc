@@ -8,29 +8,20 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
   StatusBar,
 } from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 import InputScreen from './src/views/InputScreen';
+import Routes from './src/Routes';
 export default class App extends React.Component<{}> {
   render() {
     return (
       <>
         <View style={styles.container}>
           <StatusBar backgroundColor="#00363a" barStyle="light-content" />
-          <InputScreen />
+          <Routes />
         </View>
       </>
     );
@@ -38,14 +29,12 @@ export default class App extends React.Component<{}> {
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
+  
   container: {
     backgroundColor: '#006064',
     color: '#ffffff',
     flex: 1,
-    alignItems: 'center',
+    // alignItems: 'center',
     justifyContent: 'center',
   },
 });
