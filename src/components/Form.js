@@ -50,6 +50,7 @@ export default class Form extends React.Component<{}> {
           this.setState(
             Object.assign(this.state.resultTables, {
               [x]: {
+                id: x,
                 a1: a1,
                 a2: a2,
                 a3: a3,
