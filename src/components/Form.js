@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import factor from '../customFunctions/valueData';
+import {Actions} from 'react-native-router-flux';
 
 const numberBucket = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 export default class Form extends React.Component<{}> {
@@ -68,6 +69,7 @@ export default class Form extends React.Component<{}> {
       }
     });
     console.log(this.state.resultTables);
+    Actions.outputScreen(this.state);
   }
   render() {
     let {highValue, lowValue, closeValue} = this.state;
@@ -81,7 +83,9 @@ export default class Form extends React.Component<{}> {
           //   value={value}
           placeholder="Enter High Value..."
           placeholderTextColor="#ffffff"
+          selectionColor="#263238"
           keyboardType="decimal-pad"
+          onSubmitEditing={() => this.lowValue.focus()}
         />
         <TextInput
           style={styles.inputField}
@@ -92,6 +96,8 @@ export default class Form extends React.Component<{}> {
           placeholder="Enter Low Value..."
           placeholderTextColor="#ffffff"
           keyboardType="decimal-pad"
+          ref={input => this.lowValue = input}
+          onSubmitEditing={() => this.closeValue.focus()}
         />
         <TextInput
           style={styles.inputField}
@@ -102,6 +108,7 @@ export default class Form extends React.Component<{}> {
           placeholder="Enter Close Value..."
           placeholderTextColor="#ffffff"
           keyboardType="decimal-pad"
+          ref={input => this.closeValue = input}
         />
         <TouchableOpacity
           style={styles.button}
