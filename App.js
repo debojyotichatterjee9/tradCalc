@@ -23,7 +23,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import InputScreen from './src/components/InputScreen';
+import InputScreen from './src/views/InputScreen';
 export default class App extends React.Component<{}> {
   render() {
     return (
