@@ -17,7 +17,7 @@ export default class Logo extends React.Component<{}> {
           style={{width: 70, height: 70}}
           source={require('../assets/images/logo.png')}
         />
-        <Text style={styles.logoText}>Welcome username...</Text>
+        <Text style={styles.logoText}>Welcome Tamal...</Text>
       </View>
     );
   }

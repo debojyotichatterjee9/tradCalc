@@ -18,7 +18,7 @@ export default class InputScreen extends React.Component<{}> {
         <Form />
         <View style={styles.bottomInfoTextContainer}>
           <Text style={styles.bottomInfoText}>
-            Enter the values to calculate...
+            © Debojyoti Chatterjee
           </Text>
         </View>
       </View>
