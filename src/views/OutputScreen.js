@@ -29,19 +29,19 @@ function Item({item}) {
       </Text>
       <View style={styles.rows}>
       <Text style={styles.leftCol}>
-        Resistance Final:</Text><Text style={styles.rightCol}>{item.a1}</Text>
+        Resistance Final:</Text><Text style={styles.rightCol}>{item.a4}</Text>
         </View>
         <View style={styles.rows}>
       <Text style={styles.leftCol}>
-        Resistance Major:</Text><Text style={styles.rightCol}>{item.a2}</Text>
+        Resistance Major:</Text><Text style={styles.rightCol}>{item.a3}</Text>
       </View>
       <View style={styles.rows}>
       <Text style={styles.leftCol}>
-        Resistance Minor:</Text><Text style={styles.rightCol}>{item.a3}</Text>
+        Resistance Minor:</Text><Text style={styles.rightCol}>{item.a2}</Text>
       </View>
       <View style={styles.rows}>
       <Text style={styles.leftCol}>
-        Resistance Low:</Text><Text style={styles.rightCol}>{item.a4}</Text>
+        Resistance Low:</Text><Text style={styles.rightCol}>{item.a1}</Text>
       </View>
       <View style={styles.rows}>
       <Text style={styles.leftCol}>

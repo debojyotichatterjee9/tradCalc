@@ -14,10 +14,10 @@ export default class Logo extends React.Component<{}> {
     return (
       <View style={styles.container}>
         <Image
-          style={{width: 70, height: 70}}
+          style={{width: 100, height: 100}}
           source={require('../assets/images/logo.png')}
         />
-        <Text style={styles.logoText}>Welcome Tamal...</Text>
+        <Text style={styles.logoText}>Please enter correct values to calculate.</Text>
       </View>
     );
   }
@@ -33,5 +33,6 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 18,
     marginVertical: 15,
+    paddingTop: 40
   },
 });

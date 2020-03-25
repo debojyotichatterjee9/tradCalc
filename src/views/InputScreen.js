@@ -10,6 +10,7 @@ import {
 
 import Logo from '../components/Logo';
 import Form from '../components/Form';
+import Package from '../../package.json';
 export default class InputScreen extends React.Component<{}> {
   render() {
     return (
@@ -18,8 +19,9 @@ export default class InputScreen extends React.Component<{}> {
         <Form />
         <View style={styles.bottomInfoTextContainer}>
           <Text style={styles.bottomInfoText}>
-            © Debojyoti Chatterjee
+    © Debojyoti Chatterjee 
           </Text>
+          <Text style={styles.versionInfo}>Version: {Package.version}</Text>
         </View>
       </View>
     );
@@ -44,4 +46,8 @@ const styles = StyleSheet.create({
     color: 'rgba(255, 255, 255, 0.5)',
     fontSize: 16,
   },
+  versionInfo : {
+    color: 'rgba(255, 255, 255, 0.5)',
+    fontSize: 16,
+  }
 });

@@ -12,7 +12,7 @@ import {
 import factor from '../customFunctions/valueData';
 import {Actions} from 'react-native-router-flux';
 
-const numberBucket = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const numberBucket = [2, 3, 5, 7];
 export default class Form extends React.Component<{}> {
   state = {
     highValue: 0.0,
