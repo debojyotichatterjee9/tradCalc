@@ -17,7 +17,9 @@ export default class Logo extends React.Component<{}> {
           style={{width: 100, height: 100}}
           source={require('../assets/images/logo.png')}
         />
-        <Text style={styles.logoText}>Please enter correct values to calculate.</Text>
+        <Text style={styles.logoText}>
+          Please enter correct values to calculate.
+        </Text>
       </View>
     );
   }
@@ -33,6 +35,6 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 18,
     marginVertical: 15,
-    paddingTop: 40
+    paddingTop: 40,
   },
 });

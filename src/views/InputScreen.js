@@ -5,6 +5,7 @@ import {
   ScrollView,
   View,
   Text,
+  ImageBackground,
   StatusBar,
 } from 'react-native';
 
@@ -14,16 +15,16 @@ import Package from '../../package.json';
 export default class InputScreen extends React.Component<{}> {
   render() {
     return (
-      <View style={styles.container}>
+      <ImageBackground
+        source={require('../assets/images/bg.png')}
+        style={styles.container}>
         <Logo />
         <Form />
         <View style={styles.bottomInfoTextContainer}>
-          <Text style={styles.bottomInfoText}>
-    © Debojyoti Chatterjee 
-          </Text>
+          <Text style={styles.bottomInfoText}>© Debojyoti Chatterjee</Text>
           <Text style={styles.versionInfo}>Version: {Package.version}</Text>
         </View>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -46,8 +47,8 @@ const styles = StyleSheet.create({
     color: 'rgba(255, 255, 255, 0.5)',
     fontSize: 16,
   },
-  versionInfo : {
+  versionInfo: {
     color: 'rgba(255, 255, 255, 0.5)',
     fontSize: 16,
-  }
+  },
 });

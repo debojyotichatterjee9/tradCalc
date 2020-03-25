@@ -6,66 +6,55 @@ import {
   Text,
   StatusBar,
   FlatList,
+  ImageBackground,
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
-import {
-  Table,
-  TableWrapper,
-  Row,
-  Rows,
-  Col,
-  Cols,
-  Cell,
-} from 'react-native-table-component';
 
 function Item({item}) {
-  console.log('8888888888888888888');
-  console.log(item);
-
   return (
     <View style={styles.item}>
       <Text style={styles.title}>
         Factor:<Text> {item.id}</Text>
       </Text>
       <View style={styles.rows}>
-      <Text style={styles.leftCol}>
-        Resistance Final:</Text><Text style={styles.rightCol}>{item.a4}</Text>
-        </View>
-        <View style={styles.rows}>
-      <Text style={styles.leftCol}>
-        Resistance Major:</Text><Text style={styles.rightCol}>{item.a3}</Text>
+        <Text style={styles.leftCol}>Resistance Final:</Text>
+        <Text style={styles.rightCol}>{item.a4}</Text>
       </View>
       <View style={styles.rows}>
-      <Text style={styles.leftCol}>
-        Resistance Minor:</Text><Text style={styles.rightCol}>{item.a2}</Text>
+        <Text style={styles.leftCol}>Resistance Major:</Text>
+        <Text style={styles.rightCol}>{item.a3}</Text>
       </View>
       <View style={styles.rows}>
-      <Text style={styles.leftCol}>
-        Resistance Low:</Text><Text style={styles.rightCol}>{item.a1}</Text>
+        <Text style={styles.leftCol}>Resistance Minor:</Text>
+        <Text style={styles.rightCol}>{item.a2}</Text>
       </View>
       <View style={styles.rows}>
-      <Text style={styles.leftCol}>
-        Neutral Point 1:</Text><Text style={styles.rightCol}>{item.neutralPoint1}</Text>
+        <Text style={styles.leftCol}>Resistance Low:</Text>
+        <Text style={styles.rightCol}>{item.a1}</Text>
       </View>
       <View style={styles.rows}>
-      <Text style={styles.leftCol}>
-        Neutral Point 2:</Text><Text style={styles.rightCol}>{item.neutralPoint2}</Text>
+        <Text style={styles.leftCol}>Neutral Point 1:</Text>
+        <Text style={styles.rightCol}>{item.neutralPoint1}</Text>
       </View>
       <View style={styles.rows}>
-      <Text style={styles.leftCol}>
-        Support Low:</Text><Text style={styles.rightCol}>{item.b1}</Text>
+        <Text style={styles.leftCol}>Neutral Point 2:</Text>
+        <Text style={styles.rightCol}>{item.neutralPoint2}</Text>
       </View>
       <View style={styles.rows}>
-      <Text style={styles.leftCol}>
-        Support Minor:</Text><Text style={styles.rightCol}>{item.b2}</Text>
+        <Text style={styles.leftCol}>Support Low:</Text>
+        <Text style={styles.rightCol}>{item.b1}</Text>
       </View>
       <View style={styles.rows}>
-      <Text style={styles.leftCol}>
-        Support Major:</Text><Text style={styles.rightCol}>{item.b3}</Text>
+        <Text style={styles.leftCol}>Support Minor:</Text>
+        <Text style={styles.rightCol}>{item.b2}</Text>
       </View>
       <View style={styles.rows}>
-      <Text style={styles.leftCol}>
-        Support Final:</Text><Text style={styles.rightCol}>{item.b4}</Text>
+        <Text style={styles.leftCol}>Support Major:</Text>
+        <Text style={styles.rightCol}>{item.b3}</Text>
+      </View>
+      <View style={styles.rows}>
+        <Text style={styles.leftCol}>Support Final:</Text>
+        <Text style={styles.rightCol}>{item.b4}</Text>
       </View>
     </View>
   );
@@ -92,13 +81,15 @@ export default class OutputScreen extends React.Component<{}> {
   render() {
     const {highValue, lowValue, closeValue} = this.state.data;
     return (
-      <View style={styles.container}>
+      <ImageBackground
+        source={require('../assets/images/bg.png')}
+        style={styles.container}>
         <View style={styles.topContainer}>
-        <Text style={styles.topText}> High Value: {highValue} |</Text>
-        <Text style={styles.topText}> Low Value: {lowValue} |</Text>
-        <Text style={styles.topText}> Close Value: {closeValue} </Text>
+          <Text style={styles.topText}> High Value: {highValue} |</Text>
+          <Text style={styles.topText}> Low Value: {lowValue} |</Text>
+          <Text style={styles.topText}> Close Value: {closeValue} </Text>
         </View>
-        
+
         <FlatList
           data={this.state.resultData}
           extraData={this.state}
@@ -111,7 +102,7 @@ export default class OutputScreen extends React.Component<{}> {
           onPress={() => this.navigateBack()}>
           <Text style={styles.buttonText}> Back </Text>
         </TouchableOpacity>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -148,8 +139,8 @@ const styles = StyleSheet.create({
   topContainer: {
     // flex: 1,
     backgroundColor: '#00363a',
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginTop: 10,
     padding: 5,
     borderColor: '#428e92',
@@ -158,7 +149,7 @@ const styles = StyleSheet.create({
   },
   topText: {
     color: '#48a999',
-    fontWeight: "bold"
+    fontWeight: 'bold',
   },
   title: {
     backgroundColor: '#00363a',
@@ -172,9 +163,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   rows: {
-    flex: 1, 
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     borderColor: '#428e92',
     borderWidth: 1.5,
   },
@@ -188,5 +179,5 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     padding: 5,
     paddingLeft: 10,
-  }
+  },
 });

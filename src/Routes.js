@@ -7,10 +7,19 @@ import OutputScreen from '../src/views/OutputScreen';
 export default class Routes extends Component<{}> {
   render() {
     return (
-        <Router>
+      <Router>
         <Stack key="root" hideNavBar={true}>
-          <Scene key="inputScreen" component={InputScreen} title="InputScreen" initial={true} />
-          <Scene key="outputScreen" component={OutputScreen} title="OutputScreen" />
+          <Scene
+            key="inputScreen"
+            component={InputScreen}
+            title="InputScreen"
+            initial={true}
+          />
+          <Scene
+            key="outputScreen"
+            component={OutputScreen}
+            title="OutputScreen"
+          />
         </Stack>
       </Router>
     );
