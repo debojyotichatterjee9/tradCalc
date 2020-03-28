@@ -31,7 +31,7 @@ export default class Form extends React.Component<{}> {
       const highLowDifference = highValue - lowValue;
       console.log(`highLowDifference: ${highLowDifference}`);
       numberBucket.forEach(element => {
-        if (highLowDifference % 2 === 0 && highLowDifference % element === 0) {
+        if (highLowDifference % element === 0) {
           // console.log(`result: ${highLowDifference / element}`);
           const x = highLowDifference / element;
           console.log(`x:${x}`);
@@ -69,36 +69,74 @@ export default class Form extends React.Component<{}> {
               }),
             );
           }
-        } else if (
-          highLowDifference % 2 !== 0 &&
-          highLowDifference % element !== 0
-        ) {
-          console.log('undivisibleAdder!');
-          const x = parseInt(highLowDifference / element, 10);
-          console.log(`x:${x}`);
-          if (factor[x]) {
-            const factorValue =
-              factor[x].primaryFactor * element + undivisibleAdder;
+        }
+        //  else if (
+        //   highLowDifference % 2 !== 0 &&
+        //   highLowDifference % element !== 0
+        // ) {
+        //   console.log('undivisibleAdder!');
+        //   const x = parseInt(highLowDifference / element, 10);
+        //   console.log(`x:${x}`);
+        //   if (factor[x]) {
+        //     const factorValue =
+        //       factor[x].primaryFactor * element + undivisibleAdder;
+        //     console.log(`factor: ${factorValue}`);
+        //     const neutralPoint1 = this.state.closeValue + factorValue;
+        //     const neutralPoint2 = this.state.closeValue - factorValue;
+        //     console.log(neutralPoint1, neutralPoint2);
+        //     const a1 =
+        //       neutralPoint1 + factor[x].factor1 * element + undivisibleAdder;
+        //     const a2 = a1 + factor[x].factor2 * element + undivisibleAdder;
+        //     const a3 = a2 + factor[x].factor3 * element + undivisibleAdder;
+        //     const a4 = a3 + factor[x].factor4 * element + undivisibleAdder;
+        //     console.log(a1, a2, a3, a4);
+        //     const b1 =
+        //       neutralPoint2 - factor[x].factor1 * element + undivisibleAdder;
+        //     const b2 = b1 - factor[x].factor2 * element + undivisibleAdder;
+        //     const b3 = b2 - factor[x].factor3 * element + undivisibleAdder;
+        //     const b4 = b3 - factor[x].factor4 * element + undivisibleAdder;
+        //     console.log(b1, b2, b3, b4);
+        //     this.setState(
+        //       Object.assign(this.state.resultTables, {
+        //         [x]: {
+        //           id: x,
+        //           a1: a1.toFixed(2),
+        //           a2: a2.toFixed(2),
+        //           a3: a3.toFixed(2),
+        //           a4: a4.toFixed(2),
+        //           neutralPoint1: neutralPoint1.toFixed(2),
+        //           neutralPoint2: neutralPoint2.toFixed(2),
+        //           b1: b1.toFixed(2),
+        //           b2: b2.toFixed(2),
+        //           b3: b3.toFixed(2),
+        //           b4: b4.toFixed(2),
+        //         },
+        //       }),
+        //     );
+        //   }
+        // } 
+        else {
+          console.log('Factor not found!!!');
+          const factorValue = factor[2].primaryFactor * element;
+          const y = highLowDifference / 2;
             console.log(`factor: ${factorValue}`);
-            const neutralPoint1 = this.state.closeValue + factorValue;
-            const neutralPoint2 = this.state.closeValue - factorValue;
+            const neutralPoint1 = this.state.closeValue + (y * factor[2].primaryFactor);
+            const neutralPoint2 = this.state.closeValue - (y * factor[2].primaryFactor);
             console.log(neutralPoint1, neutralPoint2);
-            const a1 =
-              neutralPoint1 + factor[x].factor1 * element + undivisibleAdder;
-            const a2 = a1 + factor[x].factor2 * element + undivisibleAdder;
-            const a3 = a2 + factor[x].factor3 * element + undivisibleAdder;
-            const a4 = a3 + factor[x].factor4 * element + undivisibleAdder;
+            const a1 = neutralPoint1 + factor[2].factor1 * y;
+            const a2 = a1 + factor[2].factor2 * y;
+            const a3 = a2 + factor[2].factor3 * y;
+            const a4 = a3 + factor[2].factor4 * y;
             console.log(a1, a2, a3, a4);
-            const b1 =
-              neutralPoint2 - factor[x].factor1 * element + undivisibleAdder;
-            const b2 = b1 - factor[x].factor2 * element + undivisibleAdder;
-            const b3 = b2 - factor[x].factor3 * element + undivisibleAdder;
-            const b4 = b3 - factor[x].factor4 * element + undivisibleAdder;
+            const b1 = neutralPoint2 - factor[2].factor1 * y;
+            const b2 = b1 - factor[2].factor2 * y;
+            const b3 = b2 - factor[2].factor3 * y;
+            const b4 = b3 - factor[2].factor4 * y;
             console.log(b1, b2, b3, b4);
             this.setState(
               Object.assign(this.state.resultTables, {
-                [x]: {
-                  id: x,
+                '2': {
+                  id: 2,
                   a1: a1.toFixed(2),
                   a2: a2.toFixed(2),
                   a3: a3.toFixed(2),
@@ -112,9 +150,6 @@ export default class Form extends React.Component<{}> {
                 },
               }),
             );
-          }
-        } else {
-          console.log('Factor not found!!!');
         }
       });
       console.log(this.state.resultTables);
